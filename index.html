@@ -1,35 +1,393 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Vignesh Balaji | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vignesh Balaji Ravichandran — AI Engineer Portfolio</title>
+    <meta
+      name="description"
+      content="Cinematic portfolio for Vignesh Balaji Ravichandran — Machine Learning Engineer and Full Stack Developer."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <section class="hero">
-    <h1>Hi, I am Vignesh Balaji</h1>
-    <p>Machine Learning Engineer | Full Stack Developer | Computer Science Graduate Student</p>
-  </section>
+    <header class="topbar">
+      <nav class="navbar" aria-label="Primary navigation">
+        <div class="navbar__brand">
+          <a class="brand" href="#home">Vignesh Balaji Ravichandran</a>
+          <button
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+            type="button"
+          >
+            <span class="nav-toggle__bar"></span>
+            <span class="nav-toggle__bar"></span>
+            <span class="nav-toggle__bar"></span>
+          </button>
+        </div>
 
-  <section class="projects">
-    <h2>Projects</h2>
+        <ul id="primary-navigation" class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="project-card">
-      <h3>Loneliness Prediction</h3>
-      <p>Built ML models using smartphone and Oura wearable data to predict loneliness patterns.</p>
-    </div>
+    <main id="main-content">
+      <section id="home" class="hero reveal-on-scroll" data-reveal-delay="120">
+        <div class="hero-image-layer" aria-hidden="true">
+          <img
+            class="hero-image"
+            src="assets/images/profile.png"
+            alt="Portrait of Vignesh Balaji Ravichandran"
+          />
+        </div>
 
-    <div class="project-card">
-      <h3>LLM Time-Series Benchmark</h3>
-      <p>Compared LSTM, tokenization, prompt-based, and heuristic models on synthetic time-series tasks.</p>
-    </div>
+        <div class="hero__overlay"></div>
 
-    <div class="project-card">
-      <h3>Talk Mail</h3>
-      <p>Created a voice-powered email assistant with AI reply generation and meeting extraction.</p>
-    </div>
+        <div class="hero__content">
+          <p class="eyebrow">Machine Learning Engineer • Full Stack Developer</p>
+          <h1 class="hero__title">Vignesh Balaji Ravichandran</h1>
+          <p class="hero__headline">
+            Machine Learning Engineer | Full Stack Developer | Computer Science Graduate Student
+          </p>
+          <p class="hero__copy hero__copy--typing" aria-label="Hello World! I am Vignesh Balaji, and I tinker with AI and software engineering concepts to build AI-powered applications, machine learning algorithms, and full-stack web projects that solve real-world problems while looking cool too." data-typing-text="Hello World! I am Vignesh Balaji, and I tinker with AI and software engineering concepts to build AI-powered applications, machine learning algorithms, and full-stack web projects that solve real-world problems while looking cool too."></p>
 
-  </section>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">View Projects</a>
+            <a class="btn btn--outline" href="assets/resume/Vignesh_Balaji_Resume.pdf" target="_blank" rel="noopener">
+              Download Resume
+            </a>
+            <a class="btn btn--ghost" href="#contact">Contact Me</a>
+          </div>
+        </div>
 
-</body>
+        <a class="scroll-indicator" href="#about" aria-label="Scroll to about section">
+          <span class="scroll-indicator__arrow"></span>
+          <span class="scroll-indicator__text">Scroll</span>
+        </a>
+      </section>
+
+      <section id="about" class="section section--soft reveal-on-scroll">
+        <div class="section__header">
+          <span class="section__eyebrow">About</span>
+          <h2>Professional summary</h2>
+        </div>
+        <div class="section__grid about-grid">
+          <div class="about-card">
+            <p>
+              I am a Master's in Computer Science student at Quinnipiac University with a 4.0 GPA. I moved from India to the USA to learn about AI and develop software in all kinds of platforms, which are also AI-powered.I have experience in full-stack development, SaaS, machine learning, and AI-powered applications, as well as healthcare ML, computer vision, and web systems.healthcare ML, computer vision, Data Science, Data Analysis, and web systems.
+            </p>
+          </div>
+          <div class="about-card about-card--accent">
+            <p>
+              My background includes full-stack work at Goaira Technologies, WordPress/backend work at Ijona Technologies, ML data work at Amazon, and academic projects focused on practical AI systems, explainable machine learning, and technical tools that solve real problems.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              I started my coding journey as a result of my interest in games and digital systems, which are used in the concepts of mathematical and scientific concepts. I have also built several systems that are added to the site. I also like the big 3 C's in development, which are coffee, coding, and crying, in any order. 
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="section reveal-on-scroll">
+        <div class="section__header">
+          <span class="section__eyebrow">Education</span>
+          <h2>Academic foundation</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-card">
+            <div class="timeline-card__title">Quinnipiac University</div>
+            <div class="timeline-card__subtitle">Master of Science in Computer Science</div>
+            <div class="timeline-card__meta">Aug 2024 – May 2026 • GPA 4.0 / 4.0</div>
+          </article>
+          <article class="timeline-card">
+            <div class="timeline-card__title">SCSVMV University</div>
+            <div class="timeline-card__subtitle">Bachelor of Engineering in Computer Science</div>
+            <div class="timeline-card__meta">Aug 2016 – May 2020 • GPA 8.6 / 9.0</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="section section--dark reveal-on-scroll">
+        <div class="section__header">
+          <span class="section__eyebrow">Experience</span>
+          <h2>Professional impact</h2>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-card">
+            <div class="experience-card__header">
+              <h3>Full Stack Developer</h3>
+              <span>Goaira Technologies Pvt Limited</span>
+            </div>
+            <span class="experience-card__date">Nov 2022 – Apr 2024</span>
+            <ul>
+              <li>Developed and optimized full-stack applications, improving system performance by approx. 25%.</li>
+              <li>Reduced production defects by approx. 30% through peer code reviews and SDLC best practices.</li>
+              <li>Managed Agile workflows using Jira, improving sprint delivery efficiency by approx. 20%.</li>
+              <li>Refactored legacy codebases, reducing technical debt by approx. 35%.</li>
+              <li>Built and maintained REST APIs for reliable system integration and data flow.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-card__header">
+              <h3>Full Stack WordPress Intern</h3>
+              <span>Ijona Technologies Pvt Ltd</span>
+            </div>
+            <span class="experience-card__date">May 2021 – Feb 2022</span>
+            <ul>
+              <li>Migrated 15+ websites from legacy systems with less than 5% downtime.</li>
+              <li>Managed hosting and backend operations, improving uptime and reliability by approx. 20%.</li>
+              <li>Implemented automated backup systems, reducing data loss risk and improving recovery time by approx. 40%.</li>
+              <li>Optimized server configurations and storage management.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-card__header">
+              <h3>ML Data Associate</h3>
+              <span>Amazon</span>
+            </div>
+            <span class="experience-card__date">May 2022 – Aug/Sep 2022</span>
+            <ul>
+              <li>Analyzed client voice interaction data.</li>
+              <li>Categorized voice requests and detected anomalies.</li>
+              <li>Generated reports for management to support system performance improvements.</li>
+              <li>Helped maintain production continuity and data quality.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-card__header">
+              <h3>Health Insurance Examiner</h3>
+              <span>Exela SourceHov</span>
+            </div>
+            <span class="experience-card__date">Oct 2022 – Jul 2023</span>
+            <ul>
+              <li>Reviewed health insurance claims for correctness, compliance, and accuracy.</li>
+              <li>Verified claimant and adjuster documentation.</li>
+              <li>Awarded Best Performer of the Quarter in 2023.</li>
+              <li>Received the Innovative Mind award for introducing an efficient production plan.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section reveal-on-scroll">
+        <div class="section__header">
+          <span class="section__eyebrow">Projects</span>
+          <h2>Cinematic AI and software work</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-card__meta">Sept 2025 – Present</div>
+            <h3>Longitudinal Chest X-ray Progression Analysis</h3>
+            <p class="project-card__tech">PyTorch • ResNet-18 • OpenCV • Python</p>
+            <ul>
+              <li>Built a ResNet-18 based multi-label classifier for 8 thoracic diseases.</li>
+              <li>Designed patient-level disease progression analysis: improved, worsened, stable.</li>
+              <li>Achieved 0.79 macro AUROC and approx. 82% classification accuracy.</li>
+              <li>Added Grad-CAM and bounding box visualizations, improving interpretability by approx. 30%.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__meta">Jan 2026 – Present</div>
+            <h3>Heart Disease Prediction System</h3>
+            <p class="project-card__tech">Scikit-learn • Pandas • NumPy • Python</p>
+            <ul>
+              <li>Built a multi-class heart disease severity classifier.</li>
+              <li>Predicted no disease, mild disease, and moderate-to-severe disease.</li>
+              <li>Used Random Forest and SMOTE for class imbalance.</li>
+              <li>Achieved approx. 85% accuracy and 0.83 F1-score.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__meta">Nov 2019 – Jun 2020</div>
+            <h3>Emergency Aid and Detection Using Drones and UAVs</h3>
+            <p class="project-card__tech">AI • Object Detection • Python</p>
+            <ul>
+              <li>Built an AI/object detection concept for emergency rescue scenarios.</li>
+              <li>Focused on disasters such as earthquakes, wildfire, accidents, and building fires.</li>
+              <li>Designed a system to notify officials and support rescue operations.</li>
+              <li>Led a team of three and handled planning and Python-based detection logic.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__meta">Nov 2018 – Feb 2019</div>
+            <h3>Face Recognition Using Python</h3>
+            <p class="project-card__tech">Python • OpenCV • Biometric Systems</p>
+            <ul>
+              <li>Built a face detection and recognition system for images and video.</li>
+              <li>Designed a use case for exam hall attendance using biometric recognition.</li>
+              <li>Led a team of two and tuned recognition logic for efficiency.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__meta">Aug 2017 – Dec 2017</div>
+            <h3>University Library Booking Application</h3>
+            <p class="project-card__tech">Web App • Queue Management</p>
+            <ul>
+              <li>Built a reservation concept to book library books in advance.</li>
+              <li>Designed online inventory and queue-based booking logic.</li>
+              <li>Helped reduce unnecessary library visits.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__meta">Nov 2016 – Apr 2017</div>
+            <h3>University Notice Board Website</h3>
+            <p class="project-card__tech">Web Development • Communication Tools</p>
+            <ul>
+              <li>Built a website for publishing college announcements online.</li>
+              <li>Included emergency notices, competition updates, and result information.</li>
+              <li>Developed landing pages and login page structure.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section section--skills reveal-on-scroll">
+        <div class="section__header">
+          <span class="section__eyebrow">Skills</span>
+          <h2>Technical strengths</h2>
+        </div>
+        <div class="skill-grid">
+          <article class="skill-card">
+            <h3>Languages</h3>
+            <p>Python, Java, C/C++, SQL, JavaScript, C#, R</p>
+          </article>
+          <article class="skill-card">
+            <h3>Frameworks & Libraries</h3>
+            <p>PyTorch, Scikit-learn, Pandas, NumPy, OpenCV, React, Node.js, Flask, FastAPI, TensorFlow</p>
+          </article>
+          <article class="skill-card">
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JavaScript, WordPress, REST APIs</p>
+          </article>
+          <article class="skill-card">
+            <h3>Databases</h3>
+            <p>SQL, MongoDB</p>
+          </article>
+          <article class="skill-card">
+            <h3>Tools</h3>
+            <p>Git, GitHub, Docker, Jira, Google Cloud Platform, VS Code, PyCharm, Visual Studio IDE</p>
+          </article>
+          <article class="skill-card">
+            <h3>Concepts</h3>
+            <p>Machine Learning, Deep Learning, Computer Vision, SDLC, Agile, REST APIs, Full-Stack Development, Database Management</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="achievements" class="section section--dark reveal-on-scroll">
+        <div class="section__header">
+          <span class="section__eyebrow">Achievements</span>
+          <h2>Leadership & recognition</h2>
+        </div>
+        <div class="achievement-grid">
+          <article class="achievement-card">
+            <h3>Professional awards</h3>
+            <ul>
+              <li>Best Performer of the Quarter at Exela, 2023</li>
+              <li>Innovative Mind Award for introducing an efficient production plan</li>
+            </ul>
+          </article>
+          <article class="achievement-card">
+            <h3>Academic and technical awards</h3>
+            <ul>
+              <li>First place in Hardware Mania, inter-college district-level meet, 2018</li>
+              <li>Medal of Honor for organizing BIOS-2k18 college festival</li>
+              <li>Certificate of honor for consistent blood donation, Government of Tamil Nadu, 2018</li>
+            </ul>
+          </article>
+          <article class="achievement-card">
+            <h3>Sports and leadership</h3>
+            <ul>
+              <li>Second prize in 4x100 meters relay, intra-college meet, 2017</li>
+              <li>Sports Captain for Department of Computer Science Engineering, 2017</li>
+              <li>Star athlete in 100m during university years</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="community" class="section reveal-on-scroll">
+        <div class="section__header">
+          <span class="section__eyebrow">Community</span>
+          <h2>Volunteering & outreach</h2>
+        </div>
+        <div class="community-grid">
+          <article class="community-card">
+            <h3>Public health support</h3>
+            <p>Volunteered during COVID-19 to support public regulation, peace, hospital vacancy alerts, and health-awareness webinars.</p>
+          </article>
+          <article class="community-card">
+            <h3>Student support</h3>
+            <p>Maintained a technical help blog and coding forum, hosted seminars for government school students, and ran Code Pirate learning content.</p>
+          </article>
+          <article class="community-card">
+            <h3>Social impact</h3>
+            <p>Coached economically struggling children through a sports club, supported local animal rescue efforts, and contributed to reforestation work.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="resume" class="section section--resume reveal-on-scroll">
+        <div class="section__header">
+          <span class="section__eyebrow">Resume</span>
+          <h2>View the full profile</h2>
+        </div>
+        <div class="resume-card">
+          <p>
+            Download the complete resume to review detailed projects, achievements, and professional experience.
+          </p>
+          <a class="btn btn--primary" href="assets/resume/Vignesh_Balaji_Resume.pdf" target="_blank" rel="noopener">
+            Download Resume
+          </a>
+        </div>
+      </section>
+
+      <section id="contact" class="section section--contact reveal-on-scroll">
+        <div class="section__header">
+          <span class="section__eyebrow">Contact</span>
+          <h2>Let's connect</h2>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>GitHub</h3>
+            <a href="https://github.com/baloog" target="_blank" rel="noopener">github.com/baloog</a>
+          </article>
+          <article class="contact-card">
+            <h3>LinkedIn</h3>
+            <a href="https://linkedin.com/in/vignesh-balaji-95830516b" target="_blank" rel="noopener">linkedin.com/in/vignesh-balaji-95830516b</a>
+          </article>
+          <article class="contact-card">
+            <h3>Email</h3>
+            <a href="mailto:vignesh1998balaji@gmail.com">vignesh1998balaji@gmail.com</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Vignesh Balaji Ravichandran. Built with HTML, CSS, and JavaScript.</p>
+    </footer>
+  </body>
 </html>
