@@ -386,8 +386,6 @@ This section explains where timeline logos live, how to replace them, and how to
 - Wrong file path (use `assets/logos/` exactly).
 - Wrong image extension (case-sensitive on some servers).
 - Logo not placed inside `assets/logos` directory.
-- Broken links in `href` or `src` attributes.
-- Oversized logos causing layout issues.
 
 14. Recommended logo format
 
@@ -397,3 +395,45 @@ This section explains where timeline logos live, how to replace them, and how to
 - Recommended sizes: 512x512 or 256x256 pixels
 
 If you need help creating properly sized PNGs, I can add a short script to optimize logos.
+
+## Dark Mode Prisma-Inspired Theme Editing Guide
+
+1. Dark mode palette
+
+- Primary black: `#000000`
+- Deep violet: `#3B0066`
+- Bright purple: `#8A00FF`
+- Lavender highlight: `#C084FC`
+- Muted lavender text: `#B9A7D8`
+- Pure white: `#FFFFFF`
+
+2. Where dark section colors are defined
+
+- Dark mode uses the default `:root` colors at the top of `style.css`.
+- The `body.light-mode` selector only overrides those values for light mode.
+- The after-hero section backgrounds and card styling are controlled by `.section`, `.section--soft`, `.section--dark`, and the card selectors in `style.css`.
+
+3. How purple gradients are applied
+
+- Gradient accents are layered through the `.section` background rule for dark mode.
+- These gradients are added behind sections using violet and lavender glow stops over `#000000`.
+- This keeps the structure high-contrast while giving a premium purple glow behind content.
+
+4. How card backgrounds and borders work
+
+- Cards use `--card-bg` with a near-black translucent fill.
+- The card border is a subtle purple tint using `--card-border`.
+- Hover effects add a soft purple glow to cards, preserving the premium tech-forward feel.
+
+5. How to adjust dark mode without affecting hero/light mode
+
+- Only edit the default `:root` values for dark theme colors in `style.css`.
+- Do not modify the `body.light-mode` block; it is the light theme override.
+- Avoid changing hero-specific variables like `--hero-image-layer-*` and `--hero-overlay-*`.
+- Keep hero button and overlay styles untouched to preserve the hero section appearance.
+
+6. Warning not to edit hero image settings
+
+- The hero image and its overlay are controlled by hero-specific CSS variables and HTML structure.
+- Do not change hero image file paths, overlay color variables, or hero button color definitions when updating dark mode.
+- Focus only on the `.section` and card styling after the hero section for dark mode updates.
