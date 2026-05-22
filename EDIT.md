@@ -152,3 +152,248 @@ python -m http.server 8000
 - Open the Network tab to verify that `assets/images/profile.png` and `assets/resume/Vignesh_Balaji_Resume.pdf` are loading.
 - Resize the browser to test responsive behavior.
 - If the hero image does not appear, confirm the filename and path in `index.html`.
+
+## Light/Dark Mode Editing Guide
+
+1. Where the theme toggle is located
+
+- The theme toggle button is inside the navigation bar (`<nav class="navbar">`) near the menu controls.
+
+2. How the toggle works
+
+- Clicking the toggle adds or removes the `light-mode` class on the `<body>`.
+- CSS variables defined in `style.css` change the page colors automatically.
+- The toggle updates its icon and `aria-pressed` state for accessibility.
+
+3. Where dark mode colors are defined
+
+- Dark mode uses the default values inside the `:root` section at the top of `style.css`.
+- These CSS variables control background, text, border, and accent colors.
+
+4. Where light mode colors are defined
+
+- Light mode overrides are defined in the `body.light-mode` block in `style.css`.
+- This block sets the cream background, mint accents, lavender highlights, and charcoal text.
+
+5. How to edit the light palette
+
+1. Open `style.css`.
+2. Find the `body.light-mode` selector.
+3. Update values such as `--bg`, `--text`, `--accent-red`, `--accent-blue`, and `--card-bg`.
+4. Save and refresh to preview the light theme.
+
+6. How to edit the dark palette
+
+1. Open `style.css`.
+2. Find the `:root` selector at the top.
+3. Update values such as `--bg`, `--text`, `--accent-red`, and `--accent-blue`.
+4. Save and refresh to preview the dark theme.
+
+7. How localStorage remembers the theme
+
+- The JavaScript code in `script.js` stores the selected theme under the key `theme`.
+- When the page loads again, the saved value is read and the theme is restored.
+
+8. How to reset theme preference
+
+1. Open the browser developer tools.
+2. Go to the Application / Storage tab.
+3. Find `localStorage` for the site.
+4. Delete the `theme` key or clear localStorage.
+5. Refresh the page to return to the default theme.
+
+9. Common mistakes
+
+- Forgetting CSS variables and using hardcoded colors instead.
+- Changing a color in one place instead of the shared variables.
+- Using the wrong `localStorage` key name in `script.js`.
+- Adding the toggle button in the HTML but not connecting it to JavaScript.
+## Hero Button Palette System
+
+1. Which palette colors are used for each button
+
+- `View Projects` uses the teal / purple gradient defined by `--btn-primary-start` and `--btn-primary-end`.
+- `Download Resume` uses the purple gradient defined by `--btn-secondary-start` and `--btn-secondary-end`.
+- `Contact Me` uses the yellow gradient defined by `--btn-tertiary-start` and `--btn-tertiary-end`.
+
+2. Where button gradients are defined
+
+- Gradients are defined in `style.css` using CSS variables at the top of the file.
+- The `hero__actions` button rules use those variables to style hero buttons consistently.
+
+3. How to change button colors later
+
+- Open `style.css` and update the color variables:
+  - `--btn-primary-start` / `--btn-primary-end`
+  - `--btn-secondary-start` / `--btn-secondary-end`
+  - `--btn-tertiary-start` / `--btn-tertiary-end`
+- Save and refresh the page to see the new hero button palette.
+
+4. Hover effect customization
+
+- Hero buttons use `transform: translateY(-2px)` and soft shadows for hover.
+- You can adjust the hover effect by editing `.hero__actions .btn--outline:hover` and `.hero__actions .btn--ghost:hover` in `style.css`.
+- The transition timing is controlled by `--transition` at the top of `style.css`.
+
+5. Dark mode vs light mode button behavior
+
+- Dark mode preserves the existing aesthetic while using subtle palette glows.
+- Light mode uses brighter teal, purple, and yellow gradients for the hero buttons.
+- The same button styles are applied consistently through CSS variables.
+
+6. How to add new palette-based buttons later
+
+- Add a new button with class `btn` and one of the style variants.
+- Define a new pair of variables in `style.css` for the gradient colors and shadow.
+- Add a hero-specific selector in `style.css` to style the new button in the hero action group.
+## Light Mode Section Color Editing Guide
+
+1. How light mode section colors are assigned
+
+- Light mode colors are applied using the `body.light-mode` class in `style.css`.
+- Each section has its own background color rule under the `body.light-mode` block.
+- Cards and inner panels still use `#FBF7F0` so they stay readable against the section colors.
+
+2. Where to edit teal, purple, cream, dark text, and yellow variables
+
+- Open `style.css`.
+- The `body.light-mode` block contains the main theme variables:
+  - `--bg` controls the page background color.
+  - `--text` controls main text color.
+  - `--btn-primary-start` and `--btn-primary-end` control button gradients.
+  - `--card-bg` controls card and panel backgrounds.
+- The explicit section backgrounds are defined in the same file using selectors like `body.light-mode #about`.
+
+3. How to change the section color order
+
+- In `style.css`, update the rules under the `body.light-mode` section color block.
+- The current order is:
+  1. `#about` → teal
+  2. `#education` → purple
+  3. `#experience` → yellow
+  4. `#projects` → teal
+  5. `#skills` → purple
+  6. `#achievements` → teal
+  7. `#community` → purple
+  8. `#resume` → yellow
+  9. `#contact` → teal
+- Change the hex values if you want a new palette, but keep section IDs the same.
+
+4. How to fix hero image washout
+
+- In `style.css`, the hero overlay values are in the `body.light-mode` block.
+- Use a dark gradient like `rgba(45, 55, 72, 0.35)` to `rgba(45, 55, 72, 0.55)`.
+- Avoid strong white overlays because they fade the image and reduce contrast.
+- The hero image appears behind the overlay and remains visible when the overlay is dark.
+
+5. Why white overlays make images look faded
+
+- White or bright overlays increase brightness over the image, washing out details.
+- A dark translucent overlay preserves the underlying image while still making text readable.
+- Light mode should keep the hero image visible, not hide it.
+
+6. Where the theme toggle is located
+
+- The toggle is in the navbar on the right side of the menu links.
+- In `index.html`, it sits inside the `.navbar__actions` element.
+- That keeps it visible on desktop and mobile.
+
+7. How to move the toggle if needed
+
+- If you want a different position, move the `.navbar__actions` block in `index.html`.
+- Place it after the `nav-links` list to keep it at the far right.
+- Avoid placing it in the center of the navbar or inside the brand block.
+
+8. Common mistakes
+
+- Editing section backgrounds in the wrong place, such as the default `:root` block.
+- Using hardcoded white backgrounds instead of the shared `--card-bg` variable.
+- Leaving the hero overlay set to white values in light mode.
+- Moving the toggle HTML without keeping the same `.theme-toggle` class and JavaScript selector.
+
+## Experience Timeline and Logo Editing Guide
+
+This section explains where timeline logos live, how to replace them, and how to add or edit experience entries.
+
+1. Where company logos are stored
+
+- Company logos live in `assets/logos/` inside the project root.
+
+2. Required company logo file names
+
+- `assets/logos/goaira.png`
+- `assets/logos/amazon.png`
+- `assets/logos/ijona.png`
+- `assets/logos/exela.png`
+
+3. How to replace a company logo
+
+1. Place the new PNG into `assets/logos/` and name it exactly as above.
+2. Use a square PNG with transparent background for best results.
+3. Refresh the site; the timeline will load the new image automatically.
+
+4. How to add a new company / experience entry
+
+1. Open `index.html` and find the `<section id="experience">` block.
+2. Copy one of the existing `.timeline-item` blocks and paste it where you want the entry to appear.
+3. Update the `timeline-meta` date, the `<h3>` title, the `.timeline-company` name, and the `<ul>` bullets.
+4. Add a company logo file to `assets/logos/` and update the `<img src="...">` path inside the badge.
+
+5. How to edit dates, role titles, company names, and bullet points
+
+1. Open `index.html` and find the appropriate `.timeline-item` block.
+2. Edit the text content directly: `div.timeline-meta` (dates), `h3` (role), `.timeline-company` (company), and the `<li>` items (details).
+
+6. How the alternating timeline layout works
+
+- Each entry uses a wrapper with either `timeline-item--left` or `timeline-item--right` which controls whether the content appears on the left or right side of the center line.
+- The central badge column (company logo) is always in the middle column.
+- To change an entry's side, switch the class between `timeline-item--left` and `timeline-item--right`.
+
+7. How the mobile timeline layout works
+
+- At narrow widths the timeline becomes a single column. The center line hides and badges stack above each card.
+- The layout is controlled by a media query in `style.css` targeting `max-width: 1100px`.
+
+8. How fallback initials / text work if logo files are missing
+
+- Each badge contains an `<img>` and a `.logo-fallback` element.
+- If the image fails to load the inline `onerror` handler hides the image and shows the fallback initials so the layout remains intact.
+
+9. Where social / contact logos are stored
+
+- Social icons live in `assets/logos/`.
+
+10. Required social logo file names
+
+- `assets/logos/github.png`
+- `assets/logos/linkedin.png`
+- `assets/logos/email.png`
+- `assets/logos/resume.png`
+
+11. How to update GitHub, LinkedIn, Email, and Resume links
+
+1. Open `index.html` and find the `<section id="contact">` block.
+2. Update the `href` for the appropriate `<a>` tag (GitHub / LinkedIn / mailto / resume PDF path).
+
+12. How to replace resume PDF
+
+1. Place the PDF in `assets/resume/` and name it `Vignesh_Balaji_Resume.pdf`.
+2. If you use a different filename, update the resume link in `index.html`.
+
+13. Common mistakes
+
+- Wrong file path (use `assets/logos/` exactly).
+- Wrong image extension (case-sensitive on some servers).
+- Logo not placed inside `assets/logos` directory.
+- Broken links in `href` or `src` attributes.
+- Oversized logos causing layout issues.
+
+14. Recommended logo format
+
+- Format: PNG
+- Aspect ratio: square
+- Background: transparent preferred
+- Recommended sizes: 512x512 or 256x256 pixels
+
+If you need help creating properly sized PNGs, I can add a short script to optimize logos.

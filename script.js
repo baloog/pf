@@ -22,6 +22,42 @@ document.addEventListener('DOMContentLoaded', function () {
     navToggle.addEventListener('click', toggleNavigation);
   }
 
+  // Theme switch uses localStorage so the browser remembers the user's choice.
+  // CSS variables are updated by adding or removing the body.light-mode class.
+  const themeToggle = document.querySelector('.theme-toggle');
+  const storedTheme = localStorage.getItem('theme');
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      body.classList.add('light-mode');
+      body.classList.remove('dark-mode');
+      if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', 'true');
+        themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+        themeToggle.querySelector('.theme-toggle__icon').textContent = '☀️';
+      }
+    } else {
+      body.classList.remove('light-mode');
+      body.classList.add('dark-mode');
+      if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', 'false');
+        themeToggle.setAttribute('aria-label', 'Switch to light mode');
+        themeToggle.querySelector('.theme-toggle__icon').textContent = '🌙';
+      }
+    }
+    localStorage.setItem('theme', theme);
+  }
+
+  if (themeToggle) {
+    const initialTheme = storedTheme === 'light' ? 'light' : 'dark';
+    applyTheme(initialTheme);
+
+    themeToggle.addEventListener('click', function () {
+      const nextTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
+      applyTheme(nextTheme);
+    });
+  }
+
   navLinks.forEach(function (link) {
     link.addEventListener('click', function (event) {
       const href = link.getAttribute('href');

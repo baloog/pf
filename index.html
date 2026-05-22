@@ -40,6 +40,15 @@
           <li><a href="#achievements">Achievements</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <div class="navbar__actions">
+          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle theme">
+            <span class="theme-toggle__track">
+              <span class="theme-toggle__thumb"></span>
+            </span>
+            <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+          </button>
+        </div>
       </nav>
     </header>
 
@@ -74,7 +83,7 @@
 
         <a class="scroll-indicator" href="#about" aria-label="Scroll to about section">
           <span class="scroll-indicator__arrow"></span>
-          <span class="scroll-indicator__text">Scroll</span>
+          <span class="scroll-indicator__text">Portfolio down here</span>
         </a>
       </section>
 
@@ -126,70 +135,99 @@
           <span class="section__eyebrow">Experience</span>
           <h2>Professional impact</h2>
         </div>
-        <div class="experience-grid">
-          <article class="experience-card">
-            <div class="experience-card__header">
-              <h3>Full Stack Developer</h3>
-              <span>Goaira Technologies Pvt Limited</span>
-            </div>
-            <span class="experience-card__date">Nov 2022 – Apr 2024</span>
-            <ul>
-              <li>Developed and optimized full-stack applications, improving system performance by approx. 25%.</li>
-              <li>Reduced production defects by approx. 30% through peer code reviews and SDLC best practices.</li>
-              <li>Managed Agile workflows using Jira, improving sprint delivery efficiency by approx. 20%.</li>
-              <li>Refactored legacy codebases, reducing technical debt by approx. 35%.</li>
-              <li>Built and maintained REST APIs for reliable system integration and data flow.</li>
-            </ul>
-          </article>
 
-          <article class="experience-card">
-            <div class="experience-card__header">
-              <h3>Full Stack WordPress Intern</h3>
-              <span>Ijona Technologies Pvt Ltd</span>
-            </div>
-            <span class="experience-card__date">May 2021 – Feb 2022</span>
-            <ul>
-              <li>Migrated 15+ websites from legacy systems with less than 5% downtime.</li>
-              <li>Managed hosting and backend operations, improving uptime and reliability by approx. 20%.</li>
-              <li>Implemented automated backup systems, reducing data loss risk and improving recovery time by approx. 40%.</li>
-              <li>Optimized server configurations and storage management.</li>
-            </ul>
-          </article>
+        <div class="timeline-container">
+          <div class="timeline-grid">
+            <div class="timeline-line" aria-hidden="true"></div>
 
-          <article class="experience-card">
-            <div class="experience-card__header">
-              <h3>ML Data Associate</h3>
-              <span>Amazon</span>
+            <!-- Item 1 (left) -->
+            <div class="timeline-item timeline-item--left">
+              <div class="timeline-content">
+                <div class="timeline-meta">Nov 2022 – Apr 2024</div>
+                <h3>Full Stack Developer
+                  <div class="timeline-company">Goaira Technologies Pvt Limited</div>
+                </h3>
+                <ul>
+                  <li>Developed and optimized full-stack applications, improving system performance by approximately 25%.</li>
+                  <li>Reduced production defects by approximately 30% through peer code reviews and SDLC best practices.</li>
+                  <li>Managed Agile workflows using Jira, improving sprint delivery efficiency by approximately 20%.</li>
+                  <li>Refactored legacy codebases, reducing technical debt by approximately 35%.</li>
+                  <li>Built and maintained REST APIs for reliable system integration and data flow.</li>
+                </ul>
+              </div>
+              <div class="timeline-badge">
+                <img src="assets/logos/goaira.png" alt="Goaira logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                <div class="logo-fallback" aria-hidden="true">GT</div>
+              </div>
             </div>
-            <span class="experience-card__date">May 2022 – Aug/Sep 2022</span>
-            <ul>
-              <li>Analyzed client voice interaction data.</li>
-              <li>Categorized voice requests and detected anomalies.</li>
-              <li>Generated reports for management to support system performance improvements.</li>
-              <li>Helped maintain production continuity and data quality.</li>
-            </ul>
-          </article>
 
-          <article class="experience-card">
-            <div class="experience-card__header">
-              <h3>Health Insurance Examiner</h3>
-              <span>Exela SourceHov</span>
+            <!-- Item 2 (right) -->
+            <div class="timeline-item timeline-item--right">
+              <div class="timeline-badge">
+                <img src="assets/logos/ijona.png" alt="Ijona logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                <div class="logo-fallback" aria-hidden="true">IT</div>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-meta">May 2021 – Feb 2022</div>
+                <h3>Full Stack WordPress Intern
+                  <div class="timeline-company">Ijona Technologies Pvt Ltd</div>
+                </h3>
+                <ul>
+                  <li>Migrated 15+ websites from legacy systems with less than 5% downtime.</li>
+                  <li>Managed hosting and backend operations, improving uptime and reliability by approximately 20%.</li>
+                  <li>Implemented automated backup systems, reducing data loss risk and improving recovery time by approximately 40%.</li>
+                  <li>Optimized server configurations and storage management.</li>
+                </ul>
+              </div>
             </div>
-            <span class="experience-card__date">Oct 2022 – Jul 2023</span>
-            <ul>
-              <li>Reviewed health insurance claims for correctness, compliance, and accuracy.</li>
-              <li>Verified claimant and adjuster documentation.</li>
-              <li>Awarded Best Performer of the Quarter in 2023.</li>
-              <li>Received the Innovative Mind award for introducing an efficient production plan.</li>
-            </ul>
-          </article>
+
+            <!-- Item 3 (left) -->
+            <div class="timeline-item timeline-item--left">
+              <div class="timeline-content">
+                <div class="timeline-meta">May 2022 – Aug/Sep 2022</div>
+                <h3>ML Data Associate
+                  <div class="timeline-company">Amazon</div>
+                </h3>
+                <ul>
+                  <li>Analyzed client voice interaction data.</li>
+                  <li>Categorized voice requests and detected anomalies.</li>
+                  <li>Generated reports for management to support system performance improvements.</li>
+                  <li>Helped maintain production continuity and data quality.</li>
+                </ul>
+              </div>
+              <div class="timeline-badge">
+                <img src="assets/logos/amazon.png" alt="Amazon logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                <div class="logo-fallback" aria-hidden="true">AM</div>
+              </div>
+            </div>
+
+            <!-- Item 4 (right) -->
+            <div class="timeline-item timeline-item--right">
+              <div class="timeline-badge">
+                <img src="assets/logos/exela.png" alt="Exela logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                <div class="logo-fallback" aria-hidden="true">ES</div>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-meta">Oct 2022 – Jul 2023</div>
+                <h3>Health Insurance Examiner
+                  <div class="timeline-company">Exela SourceHov</div>
+                </h3>
+                <ul>
+                  <li>Reviewed health insurance claims for correctness, compliance, and process accuracy.</li>
+                  <li>Verified claimant and adjuster documentation.</li>
+                  <li>Awarded Best Performer of the Quarter in 2023.</li>
+                  <li>Received Innovative Mind Award for introducing an efficient production plan.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section id="projects" class="section reveal-on-scroll">
         <div class="section__header">
           <span class="section__eyebrow">Projects</span>
-          <h2>Cinematic AI and software work</h2>
+          <h2>AI,ML,DL and Software Engineering</h2>
         </div>
         <div class="projects-grid">
           <article class="project-card">
@@ -371,16 +409,39 @@
         </div>
         <div class="contact-grid">
           <article class="contact-card">
-            <h3>GitHub</h3>
-            <a href="https://github.com/baloog" target="_blank" rel="noopener">github.com/baloog</a>
+            <img class="contact-icon" src="assets/logos/github.png" alt="GitHub" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"/>
+            <div class="icon-fallback" aria-hidden="true">GH</div>
+            <div>
+              <h3>GitHub</h3>
+              <a href="https://github.com/baloog" target="_blank" rel="noopener">github.com/baloog</a>
+            </div>
           </article>
+
           <article class="contact-card">
-            <h3>LinkedIn</h3>
-            <a href="https://linkedin.com/in/vignesh-balaji-95830516b" target="_blank" rel="noopener">linkedin.com/in/vignesh-balaji-95830516b</a>
+            <img class="contact-icon" src="assets/logos/linkedin.png" alt="LinkedIn" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"/>
+            <div class="icon-fallback" aria-hidden="true">IN</div>
+            <div>
+              <h3>LinkedIn</h3>
+              <a href="https://www.linkedin.com/in/vignesh-balaji-95830516b" target="_blank" rel="noopener">linkedin.com/in/vignesh-balaji-95830516b</a>
+            </div>
           </article>
+
           <article class="contact-card">
-            <h3>Email</h3>
-            <a href="mailto:vignesh1998balaji@gmail.com">vignesh1998balaji@gmail.com</a>
+            <img class="contact-icon" src="assets/logos/email.png" alt="Email" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"/>
+            <div class="icon-fallback" aria-hidden="true">@</div>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:vignesh1998balaji@gmail.com">vignesh1998balaji@gmail.com</a>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <img class="contact-icon" src="assets/logos/resume.png" alt="Resume" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"/>
+            <div class="icon-fallback" aria-hidden="true">CV</div>
+            <div>
+              <h3>Resume</h3>
+              <a href="assets/resume/Vignesh_Balaji_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+            </div>
           </article>
         </div>
       </section>
