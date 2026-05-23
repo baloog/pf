@@ -437,3 +437,96 @@ If you need help creating properly sized PNGs, I can add a short script to optim
 - The hero image and its overlay are controlled by hero-specific CSS variables and HTML structure.
 - Do not change hero image file paths, overlay color variables, or hero button color definitions when updating dark mode.
 - Focus only on the `.section` and card styling after the hero section for dark mode updates.
+
+## Advanced Scroll Animation System
+
+1. Reveal animation logic
+
+- All sections with `class="reveal-on-scroll"` automatically animate when they enter the viewport.
+- The animation starts with `opacity: 0` and `transform: translateY(80px)`.
+- When the section is visible, it fades in and slides up to `opacity: 1` and `translateY(0)`.
+- The easing function is `cubic-bezier(0.34, 1.56, 0.64, 1)` for a smooth premium feel with slight bounce.
+- Animation takes `0.9s` to complete and uses GPU acceleration with `will-change: opacity, transform`.
+
+2. Intersection Observer usage
+
+- `revealObserver` watches all `.reveal-on-scroll` elements for visibility changes.
+- When an element enters the viewport, the `reveal-visible` class is applied.
+- The observer has a threshold of `0.12` and a bottom margin of `-8%` to trigger earlier.
+- Once the animation plays, the element is unobserved to avoid re-triggering.
+
+3. Card stagger animation timing
+
+- Individual cards inside sections (`.about-card`, `.project-card`, `.skill-card`, etc.) animate separately.
+- Each card gets a staggered delay of `index * 0.12s` for a layered reveal effect.
+- The `card-reveal` animation uses `translate3d(0, 80px, 0)` for hardware acceleration.
+- Stagger creates a professional cascade effect as the user scrolls.
+
+4. Alternating timeline animations
+
+- The Experience section uses special animations for timeline items.
+- Timeline items marked `.timeline-item--left` slide in from the left with `timeline-slide-left` animation.
+- Timeline items marked `.timeline-item--right` slide in from the right with `timeline-slide-right` animation.
+- Each timeline animation takes `0.85s` with staggered delays of `index * 0.15s`.
+- This creates a cinematic alternating left-right reveal as the user scrolls through experience entries.
+
+5. Contact section glow customization
+
+- The Contact section has special background gradients and a pulsing glow effect.
+- In dark mode, the background uses purple radial gradients over `#000000` for a premium tech feel.
+- In light mode, the background uses lavender radial gradients over the cream base.
+- The `contactGlowPulse` animation pulses every `6s` with opacity and scale changes.
+- When the Contact section enters the viewport, the `contact-glow-active` class is added to trigger the glow.
+
+6. Performance optimization choices
+
+- All animations use `transform` and `opacity` to avoid layout reflows.
+- The `translate3d()` function is used instead of `translateY()` for explicit GPU acceleration.
+- The `will-change: opacity, transform` property hints the browser to prepare for animation.
+- No blur effects are used to keep animations smooth even on lower-end devices.
+- Stagger delays are kept under `200ms` so the entire animation feels responsive and not delayed.
+
+7. CSS classes responsible for animations
+
+- `.reveal-on-scroll` — base class for sections; holds initial opacity/transform state.
+- `.reveal-visible` — applied when section is visible; triggers fade and slide up.
+- `.card-reveal` — applied to individual cards; animations them with stagger.
+- `.timeline-slide-left` — applied to left timeline items; slides in from left.
+- `.timeline-slide-right` — applied to right timeline items; slides in from right.
+- `.contact-glow-active` — applied to contact section; activates pulsing glow effect.
+- `body:not(.light-mode)` — dark mode selector for dark-specific glow backgrounds.
+- `body.light-mode` — light mode selector for light-specific glow backgrounds.
+
+8. Differences between dark/light animation behavior
+
+- Dark mode uses purple and lavender glows (`rgba(138, 0, 255, 0.15)` for contact glow).
+- Light mode uses softer lavender glows (`rgba(210, 196, 233, 0.12)` for contact glow).
+- Dark mode reveals feel deeper and more cinematic due to the black background.
+- Light mode reveals feel softer and more elegant due to the cream background.
+- The card reveal animations use the same easing in both modes for consistency.
+- The contact glow pulses at `6s` in both modes but with different color depths.
+
+9. How to adjust animation timing
+
+1. Open `style.css`.
+2. Find `.reveal-on-scroll` and change the transition time from `0.9s` to a different value (e.g., `0.6s` for faster, `1.2s` for slower).
+3. Find `.card-reveal` and adjust the animation duration (default `0.8s`).
+4. Find `.timeline-slide-left` and `.timeline-slide-right` to adjust timeline timing (default `0.85s`).
+5. In `script.js`, modify the stagger delays: `(index * 0.12)` for cards (smaller = tighter, larger = more spread) and `(index * 0.15)` for timeline items.
+6. Find `contactGlowPulse` to adjust contact glow speed (default `6s`).
+
+10. How to disable or customize animations for specific sections
+
+1. Open `index.html`.
+2. Remove the `reveal-on-scroll` class from a section to disable animations for that section.
+3. To animate a section differently, create a new CSS class (e.g., `.custom-animation`) and define custom keyframes in `style.css`.
+4. Add the custom class to the desired section in `index.html` instead of (or in addition to) `reveal-on-scroll`.
+
+11. Common animation mistakes to avoid
+
+- Do not use `transition` and `animation` on the same element without `animation-fill-mode: forwards` to prevent state jumping.
+- Do not increase stagger delays too much (keep under `200ms` per card) or the animation will feel sluggish.
+- Do not remove `will-change: opacity, transform` or animations may lag on scroll.
+- Do not use `blur()` or `filter` effects during reveals as they hurt performance.
+- Do not use `left`, `top`, `bottom`, `right` for animation—always use `transform` for GPU acceleration.
+- Do not remove `.reveal-on-scroll` from sections in the HTML, or they will appear without animation.

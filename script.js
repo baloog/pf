@@ -109,13 +109,37 @@ document.addEventListener('DOMContentLoaded', function () {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('reveal-visible');
+          
+          // Stagger child cards/elements for layered reveal
+          var cards = entry.target.querySelectorAll('.about-card, .timeline-card, .experience-card, .project-card, .skill-card, .achievement-card, .community-card, .resume-card, .contact-card');
+          cards.forEach(function (card, index) {
+            card.style.animationDelay = (index * 0.12) + 's';
+            card.classList.add('card-reveal');
+          });
+          
+          // Special handling for timeline items with alternating animations
+          var timelineItems = entry.target.querySelectorAll('.timeline-item');
+          timelineItems.forEach(function (item, index) {
+            var content = item.querySelector('.timeline-content');
+            if (content) {
+              var isLeft = item.classList.contains('timeline-item--left');
+              content.classList.add(isLeft ? 'timeline-slide-left' : 'timeline-slide-right');
+              content.style.animationDelay = (index * 0.15) + 's';
+            }
+          });
+          
+          // Special glow effect for contact section
+          if (entry.target.id === 'contact') {
+            entry.target.classList.add('contact-glow-active');
+          }
+          
           revealObserver.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.15,
-      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.12,
+      rootMargin: '0px 0px -8% 0px',
     }
   );
 

@@ -4,6 +4,8 @@
   Comments explain the design choices, responsive layout, and animation logic.
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
 :root {
   --bg: #000000;
   --bg-soft: #030103;
@@ -262,10 +264,47 @@ button {
 
 .brand {
   color: var(--text);
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  display: inline-block;
+  overflow: hidden;
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(1.55rem, 1.35vw + 1rem, 2.25rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.04em;
   text-decoration: none;
-  font-size: 0.98rem;
+  white-space: nowrap;
+  animation: brandSignatureWrite 1.65s cubic-bezier(0.22, 1, 0.36, 1) 180ms both;
+  will-change: clip-path, opacity, transform;
+}
+
+@keyframes brandSignatureWrite {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: translateY(3px);
+  }
+  48% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .brand {
+    font-size: clamp(1.28rem, 5vw, 1.78rem);
+    letter-spacing: 0.03em;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand {
+    font-size: clamp(1.08rem, 5vw, 1.36rem);
+    letter-spacing: 0.02em;
+  }
 }
 
 .nav-toggle {
@@ -896,14 +935,118 @@ body:not(.light-mode) .contact-card:hover {
 
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transform: translateY(80px);
+  transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
 }
 
 .reveal-visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Premium card reveal animations with stagger */
+.card-reveal {
+  opacity: 0;
+  transform: translate3d(0, 80px, 0);
+  animation: cardReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes cardReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 80px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Timeline alternating slide animations */
+.timeline-slide-left {
+  opacity: 0;
+  transform: translate3d(-120px, 40px, 0);
+  animation: timelineSlideLeft 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: opacity, transform;
+}
+
+.timeline-slide-right {
+  opacity: 0;
+  transform: translate3d(120px, 40px, 0);
+  animation: timelineSlideRight 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes timelineSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-120px, 40px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes timelineSlideRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(120px, 40px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Contact section glow effects */
+.section--contact {
+  position: relative;
+  overflow: hidden;
+}
+
+body:not(.light-mode) .section--contact {
+  background: radial-gradient(circle at 50% 0%, rgba(138, 0, 255, 0.12), transparent 35%),
+    radial-gradient(circle at 20% 60%, rgba(192, 132, 252, 0.08), transparent 28%),
+    #000000;
+}
+
+body.light-mode .section--contact {
+  background: radial-gradient(circle at 50% 0%, rgba(210, 196, 233, 0.18), transparent 35%),
+    #FBF7F0;
+}
+
+.contact-glow-active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(138, 0, 255, 0.15), transparent 70%);
+  pointer-events: none;
+  animation: contactGlowPulse 6s ease-in-out infinite;
+}
+
+body.light-mode .contact-glow-active::after {
+  background: radial-gradient(ellipse at center, rgba(210, 196, 233, 0.12), transparent 70%);
+}
+
+@keyframes contactGlowPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+.reveal-on-scroll {
 
 @media (max-width: 1100px) {
   .about-grid,
