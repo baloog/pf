@@ -325,6 +325,7 @@ This section explains where timeline logos live, how to replace them, and how to
 - `assets/logos/amazon.png`
 - `assets/logos/ijona.png`
 - `assets/logos/exela.png`
+ - `assets/logos/compass.png`
 
 3. How to replace a company logo
 
@@ -395,6 +396,52 @@ This section explains where timeline logos live, how to replace them, and how to
 - Recommended sizes: 512x512 or 256x256 pixels
 
 If you need help creating properly sized PNGs, I can add a short script to optimize logos.
+
+## Ripple Logo Animation
+
+1. Which classes control ripple animation
+
+- `.timeline-badge` is the circular logo container and controls the outer glow.
+- `.timeline-badge::before` and `.timeline-badge::after` create the expanding ripple rings.
+- `@keyframes logoRipple` controls the ring expansion, opacity fade, and overall ripple speed.
+- `@keyframes logoHalo` controls the continuous halo glow and third ripple layer.
+
+2. How to change ripple color
+
+- Open `style.css`.
+- Update the `border-color` values in `.timeline-badge::before` and `.timeline-badge::after`.
+- Update the `box-shadow` and `filter: drop-shadow()` values in `.timeline-badge`.
+- Use white and silver tones like `rgba(255,255,255,0.95)` and `rgba(220,220,220,0.85)` for maximum visibility.
+
+3. How to increase or decrease ripple brightness
+
+- Increase opacity values in `.timeline-badge::before` and `.timeline-badge::after`.
+- Increase the white glow in `.timeline-badge` box-shadow and `logoHalo` keyframe values.
+- Make `border-color` brighter and stronger for better contrast in both themes.
+
+4. How to fix hidden ripple issues
+
+- Ensure `.timeline-badge` has `overflow: visible` so rings can expand outside the badge.
+- Ensure `.timeline-badge` has a higher `z-index` than surrounding content.
+- Ensure the pseudo-elements are positioned absolutely inside `.timeline-badge` and not clipped by parent containers.
+- If rings still appear behind other elements, increase `.timeline-badge { z-index: 5; }`.
+
+5. How to change animation speed
+
+- Change the `1.75s` duration in `animation: logoHalo 1.75s ease-in-out infinite;`.
+- Change the `1.75s` duration in `animation: logoRipple 1.75s ease-out infinite;` on the pseudo-elements.
+- Recommended duration values: `1.4s` to `2s` for a smooth, premium loop.
+- Use `animation-delay: 0s`, `0.35s`, and `0.7s` for staggered ripple timing.
+
+6. How to apply ripple to future logos
+
+- Add any new experience entry inside `index.html` using the existing `.timeline-badge` markup structure.
+- The ripple effect is automatically applied to logos inside `.timeline-badge`.
+
+7. Which CSS keyframes are used
+
+- `@keyframes logoRipple`
+- `@keyframes logoHalo`
 
 ## Dark Mode Prisma-Inspired Theme Editing Guide
 
