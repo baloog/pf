@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project4Lonely | Portfolio</title>
+    <meta name="description" content="Project detail page for Project4Lonely." />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#project-main">Skip to project content</a>
+    <main id="project-main">
+      <section class="hero reveal-on-scroll">
+        <div class="hero-image-layer" aria-hidden="true">
+          <img class="hero-image" src="../assets/banner/project4lonely.png" alt="Project4Lonely banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+          <div class="image-placeholder" aria-hidden="true">Project banner unavailable</div>
+        </div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <p class="eyebrow">Project Detail</p>
+          <h1 class="hero__title">Project4Lonely</h1>
+          <p class="hero__headline">A multimodal machine learning project predicting UCLA loneliness levels using smartphone sensor and wearable data.</p>
+        </div>
+      </section>
+      <section class="section section--soft reveal-on-scroll">
+        <div class="section__header">
+          <span class="section__eyebrow">Project</span>
+          <h2>Project overview</h2>
+        </div>
+        <article class="project-card">
+          <div class="project-card__meta">Mental Health ML / Multimodal Prediction</div>
+          <p class="project-card__summary">Built a multimodal machine learning project to predict UCLA loneliness levels using smartphone sensor data and Oura Ring wearable data.</p>
+          <p class="project-card__tech">Python • Pandas • Scikit-learn • XGBoost • SVM • Random Forest • Logistic Regression</p>
+          <h3>Highlights</h3>
+          <ul class="project-card__highlights">
+            <li>Combined Aware smartphone data and Oura Ring data.</li>
+            <li>Engineered features from sleep, screen usage, calls, battery usage, readiness, and activity metrics.</li>
+            <li>Trained Logistic Regression, SVM, Random Forest, and XGBoost models.</li>
+            <li>Achieved best performance with XGBoost at approximately 0.80 accuracy and 0.86 ROC-AUC.</li>
+            <li>Focused on participant-level aggregation and leakage-aware modeling.</li>
+          </ul>
+          <h3>Problem Statement</h3>
+          <p>This project predicts loneliness using multiple data sources to inform healthier behavioral interventions.</p>
+          <h3>Methodology</h3>
+          <p>Use smartphone and wearable feature engineering with classical ML models to estimate loneliness levels.</p>
+          <h3>Results</h3>
+          <p>Placeholder for model accuracy, ROC curves, and aggregation analysis.</p>
+          <h3>Visuals</h3>
+          <p>Placeholder for feature importance, model comparison, and prediction plots.</p>
+          <h3>GitHub / Demo Link</h3>
+          <p>Placeholder for the repository or live demo URL.</p>
+          <div class="project-card__actions">
+            <a class="btn btn--primary" href="../index.html#projects">Back to Portfolio</a>
+            <a class="btn btn--outline" href="#">GitHub / Demo Link</a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

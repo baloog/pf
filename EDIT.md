@@ -53,6 +53,68 @@ It is written for beginners and includes exact file locations.
 3. Each project is an `<article class="project-card">`.
 4. Update the title, timeline, tech line, and bullet points.
 
+## Project Banner and Project Page Editing Guide
+
+1. Banner images are stored in `assets/banner/`.
+2. Required banner file names:
+   - `chest-xray-pipeline.png`
+   - `tb-normal-classifier.png`
+   - `thoracic-progression.png`
+   - `heart-disease.png`
+   - `project4lonely.png`
+   - `project4lonely-update.png`
+   - `llm-time-series.png`
+   - `unhack.png`
+   - `talk-mail.png`
+   - `animal-logging-map.png`
+3. The project cards on the main page are now:
+   - Chest X-ray AI Pipeline
+   - TB vs Normal Chest X-ray Classifier
+   - Longitudinal Thoracic Disease Progression Analysis
+   - Heart Disease Prediction System
+   - Project4Lonely
+   - Project4Lonely_Update
+   - LLM Time Series Benchmark
+   - Unhack
+   - Mail_Hack / Talk Mail
+   - Animal Logging Map for Trekkers and Forest Department
+4. To replace a banner image, copy the new file into `assets/banner/` using the exact file name.
+5. Recommended banner size is around 1600x900 pixels for good quality and fast loading.
+6. Project cards are in the `#projects` section of `index.html`.
+   - Each card includes a banner, title, category label, summary, tech stack, highlights, and two links.
+7. Each clickable banner opens a detail page in the `projects/` folder.
+8. The `Click here` link currently uses `href="#"` as a placeholder.
+   - Replace `#` with the actual GitHub or project page URL later.
+9. Detail pages are stored in `projects/`.
+   - Use `../assets/banner/<file>.png` for banner images inside detail pages.
+   - Use `../style.css` and `../script.js` for correct styling and theme support.
+10. Detail page file names:
+   - `chest-xray-pipeline.html`
+   - `tb-normal-classifier.html`
+   - `thoracic-progression.html`
+   - `heart-disease.html`
+   - `project4lonely.html`
+   - `project4lonely-update.html`
+   - `llm-time-series.html`
+   - `unhack.html`
+   - `talk-mail.html`
+   - `animal-logging-map.html`
+11. How to edit summaries, tech stacks, and highlights:
+   - Open the relevant project card in `index.html`.
+   - Update the `<p class="project-card__summary">`, `<p class="project-card__tech">`, and `<ul class="project-card__highlights">` entries.
+   - Update the matching detail page paragraphs and bullets in `projects/<page>.html`.
+12. How to add GitHub links:
+   - Replace the placeholder `href="#"` on the `Click here` link.
+   - Keep the link text and `aria-label` consistent.
+13. Project theme bug fix:
+   - The Projects section now follows the current selected theme using CSS variables.
+   - A hardcoded light-mode background override was removed for `#projects`.
+   - Project detail pages now load the saved theme from `localStorage` even when no theme toggle button is present.
+14. How to keep projects synchronized:
+   - Match project titles, banner paths, and detail page file names between `index.html` and `projects/<page>.html`.
+   - Use the same project banner file name in both main page cards and detail page hero images.
+   - Update both the summary and detail page content when you change a project description.
+
 ## 6. How to edit Skills
 
 1. Open `index.html`.

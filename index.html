@@ -252,76 +252,262 @@
       <section id="projects" class="section reveal-on-scroll">
         <div class="section__header">
           <span class="section__eyebrow">Projects</span>
-          <h2>AI,ML,DL and Software Engineering</h2>
+          <h2>AI, ML, DL and Software Engineering</h2>
         </div>
         <div class="projects-grid">
           <article class="project-card">
-            <div class="project-card__meta">Sept 2025 – Present</div>
-            <h3>Longitudinal Chest X-ray Progression Analysis</h3>
-            <p class="project-card__tech">PyTorch • ResNet-18 • OpenCV • Python</p>
-            <ul>
-              <li>Built a ResNet-18 based multi-label classifier for 8 thoracic diseases.</li>
-              <li>Designed patient-level disease progression analysis: improved, worsened, stable.</li>
-              <li>Achieved 0.79 macro AUROC and approx. 82% classification accuracy.</li>
-              <li>Added Grad-CAM and bounding box visualizations, improving interpretability by approx. 30%.</li>
+            <a class="project-card__banner-link" href="projects/chest-xray-pipeline.html">
+              <div class="project-card__banner">
+                <img src="assets/banner/chest-xray-pipeline.png" alt="Chest X-ray AI Pipeline project banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <div class="project-card__banner-placeholder" aria-hidden="true">Project banner unavailable</div>
+              </div>
+            </a>
+            <h3>Chest X-ray AI Pipeline</h3>
+            <p class="project-card__category">Medical AI / Computer Vision</p>
+            <p class="project-card__summary">Built a long-term chest X-ray deep learning pipeline using both X-ray images and lung segmentation masks to support training, evaluation, inference, and explainability workflows.</p>
+            <p class="project-card__tech">Python • PyTorch • OpenCV • Grad-CAM • NumPy</p>
+            <ul class="project-card__highlights">
+              <li>Used chest X-ray images together with lung segmentation masks.</li>
+              <li>Built a structured machine learning pipeline with dataset loading, model training, evaluation, inference, and Grad-CAM visualization.</li>
+              <li>Organized the project using scalable folders including data, src, outputs, and utils.</li>
+              <li>Designed the project as a reusable foundation for medical image classification and interpretability.</li>
             </ul>
+            <div class="project-card__actions">
+              <a class="btn btn--outline project-card__details-link" href="projects/chest-x-ray-pipeline.html">View Project Details</a>
+              <a class="project-card__link" href="#" aria-label="Open GitHub or project link">Click here</a>
+            </div>
+            <!-- Replace # with actual GitHub/project URL later -->
           </article>
 
           <article class="project-card">
-            <div class="project-card__meta">Jan 2026 – Present</div>
+            <a class="project-card__banner-link" href="projects/tb-normal-classifier.html">
+              <div class="project-card__banner">
+                <img src="assets/banner/tb-normal-classifier.png" alt="TB vs Normal Chest X-ray Classifier project banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <div class="project-card__banner-placeholder" aria-hidden="true">Project banner unavailable</div>
+              </div>
+            </a>
+            <h3>TB vs Normal Chest X-ray Classifier</h3>
+            <p class="project-card__category">Medical AI / Binary Classification</p>
+            <p class="project-card__summary">Developed a Tuberculosis vs Normal chest X-ray classifier using a clean train, validation, and test split pipeline with explainability support.</p>
+            <p class="project-card__tech">Python • PyTorch • ResNet • Grad-CAM • OpenCV</p>
+            <ul class="project-card__highlights">
+              <li>Built a binary classification pipeline for Tuberculosis vs Normal X-ray images.</li>
+              <li>Implemented train, validation, and test dataset splitting.</li>
+              <li>Used a ResNet-based architecture for image classification.</li>
+              <li>Added Grad-CAM explainability to visualize model attention regions.</li>
+              <li>Included training, evaluation, inference, and interpretability workflows.</li>
+            </ul>
+            <div class="project-card__actions">
+              <a class="btn btn--outline project-card__details-link" href="projects/tb-normal-classifier.html">View Project Details</a>
+              <a class="project-card__link" href="#" aria-label="Open GitHub or project link">Click here</a>
+            </div>
+            <!-- Replace # with actual GitHub/project URL later -->
+          </article>
+
+          <article class="project-card">
+            <a class="project-card__banner-link" href="projects/thoracic-progression.html">
+              <div class="project-card__banner">
+                <img src="assets/banner/thoracic-progression.png" alt="Longitudinal Thoracic Disease Progression Analysis project banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <div class="project-card__banner-placeholder" aria-hidden="true">Project banner unavailable</div>
+              </div>
+            </a>
+            <h3>Longitudinal Thoracic Disease Progression Analysis</h3>
+            <p class="project-card__category">Medical AI / Longitudinal Analysis</p>
+            <p class="project-card__summary">Built a longitudinal chest X-ray analysis system for multi-label thoracic disease detection and patient-level disease progression tracking.</p>
+            <p class="project-card__tech">Python • PyTorch • ResNet-18 • OpenCV • NumPy • Grad-CAM</p>
+            <ul class="project-card__highlights">
+              <li>Detected 8 thoracic diseases using a ResNet-18 based multi-label classifier.</li>
+              <li>Performed scan-level and patient-level prediction analysis.</li>
+              <li>Tracked disease trends as improved, worsened, or stable.</li>
+              <li>Integrated report mining and longitudinal progression analysis.</li>
+              <li>Achieved approximately 0.79 macro AUROC.</li>
+              <li>Generated Grad-CAM visualizations and bounding boxes for explainability.</li>
+            </ul>
+            <div class="project-card__actions">
+              <a class="btn btn--outline project-card__details-link" href="projects/thoracic-progression.html">View Project Details</a>
+              <a class="project-card__link" href="#" aria-label="Open GitHub or project link">Click here</a>
+            </div>
+            <!-- Replace # with actual GitHub/project URL later -->
+          </article>
+
+          <article class="project-card">
+            <a class="project-card__banner-link" href="projects/heart-disease.html">
+              <div class="project-card__banner">
+                <img src="assets/banner/heart-disease.png" alt="Heart Disease Prediction System project banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <div class="project-card__banner-placeholder" aria-hidden="true">Project banner unavailable</div>
+              </div>
+            </a>
             <h3>Heart Disease Prediction System</h3>
-            <p class="project-card__tech">Scikit-learn • Pandas • NumPy • Python</p>
-            <ul>
-              <li>Built a multi-class heart disease severity classifier.</li>
-              <li>Predicted no disease, mild disease, and moderate-to-severe disease.</li>
-              <li>Used Random Forest and SMOTE for class imbalance.</li>
-              <li>Achieved approx. 85% accuracy and 0.83 F1-score.</li>
+            <p class="project-card__category">Healthcare ML / Classical Machine Learning</p>
+            <p class="project-card__summary">Created a 3-class clinical prediction system for heart disease severity using machine learning, class balancing, clustering analysis, and evaluation workflows.</p>
+            <p class="project-card__tech">Python • Scikit-learn • Pandas • NumPy • Random Forest • SMOTE</p>
+            <ul class="project-card__highlights">
+              <li>Predicted no disease, mild disease, and moderate/severe disease classes.</li>
+              <li>Used SMOTE to reduce class imbalance impact.</li>
+              <li>Built a Random Forest-based classification pipeline.</li>
+              <li>Included confusion matrix and metric analysis.</li>
+              <li>Added clustering workflow explanations using KMeans, GMM, DBSCAN, and Agglomerative Clustering.</li>
+              <li>Designed the project for clinical-style model interpretation and reporting.</li>
             </ul>
+            <div class="project-card__actions">
+              <a class="btn btn--outline project-card__details-link" href="projects/heart-disease.html">View Project Details</a>
+              <a class="project-card__link" href="#" aria-label="Open GitHub or project link">Click here</a>
+            </div>
+            <!-- Replace # with actual GitHub/project URL later -->
           </article>
 
           <article class="project-card">
-            <div class="project-card__meta">Nov 2019 – Jun 2020</div>
-            <h3>Emergency Aid and Detection Using Drones and UAVs</h3>
-            <p class="project-card__tech">AI • Object Detection • Python</p>
-            <ul>
-              <li>Built an AI/object detection concept for emergency rescue scenarios.</li>
-              <li>Focused on disasters such as earthquakes, wildfire, accidents, and building fires.</li>
-              <li>Designed a system to notify officials and support rescue operations.</li>
-              <li>Led a team of three and handled planning and Python-based detection logic.</li>
+            <a class="project-card__banner-link" href="projects/project4lonely.html">
+              <div class="project-card__banner">
+                <img src="assets/banner/project4lonely.png" alt="Project4Lonely project banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <div class="project-card__banner-placeholder" aria-hidden="true">Project banner unavailable</div>
+              </div>
+            </a>
+            <h3>Project4Lonely</h3>
+            <p class="project-card__category">Mental Health ML / Multimodal Prediction</p>
+            <p class="project-card__summary">Built a multimodal machine learning project to predict UCLA loneliness levels using smartphone sensor data and Oura Ring wearable data.</p>
+            <p class="project-card__tech">Python • Pandas • Scikit-learn • XGBoost • SVM • Random Forest • Logistic Regression</p>
+            <ul class="project-card__highlights">
+              <li>Combined Aware smartphone data and Oura Ring data.</li>
+              <li>Engineered features from sleep, screen usage, calls, battery usage, readiness, and activity metrics.</li>
+              <li>Trained Logistic Regression, SVM, Random Forest, and XGBoost models.</li>
+              <li>Achieved best performance with XGBoost at approximately 0.80 accuracy and 0.86 ROC-AUC.</li>
+              <li>Focused on participant-level aggregation and leakage-aware modeling.</li>
             </ul>
+            <div class="project-card__actions">
+              <a class="btn btn--outline project-card__details-link" href="projects/project4lonely.html">View Project Details</a>
+              <a class="project-card__link" href="#" aria-label="Open GitHub or project link">Click here</a>
+            </div>
+            <!-- Replace # with actual GitHub/project URL later -->
           </article>
 
           <article class="project-card">
-            <div class="project-card__meta">Nov 2018 – Feb 2019</div>
-            <h3>Face Recognition Using Python</h3>
-            <p class="project-card__tech">Python • OpenCV • Biometric Systems</p>
-            <ul>
-              <li>Built a face detection and recognition system for images and video.</li>
-              <li>Designed a use case for exam hall attendance using biometric recognition.</li>
-              <li>Led a team of two and tuned recognition logic for efficiency.</li>
+            <a class="project-card__banner-link" href="projects/project4lonely-update.html">
+              <div class="project-card__banner">
+                <img src="assets/banner/project4lonely-update.png" alt="Project4Lonely_Update project banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <div class="project-card__banner-placeholder" aria-hidden="true">Project banner unavailable</div>
+              </div>
+            </a>
+            <h3>Project4Lonely_Update</h3>
+            <p class="project-card__category">Mental Health ML / Multi-task Learning</p>
+            <p class="project-card__summary">Extended Project4Lonely into a multi-task learning pipeline predicting loneliness, depression, stress, and social connectedness using behavioral and physiological signals.</p>
+            <p class="project-card__tech">Python • XGBoost • MultiOutput Models • SHAP • Pandas • Scikit-learn</p>
+            <ul class="project-card__highlights">
+              <li>Added multi-task prediction for loneliness, depression, stress, and social connectedness.</li>
+              <li>Used MultiOutput XGBoost and single-target comparison workflows.</li>
+              <li>Evaluated median split label strategy.</li>
+              <li>Added SHAP explainability and correlation analysis.</li>
+              <li>Found that physiological readiness and sleep features mattered more than phone usage signals.</li>
+              <li>Compared multi-task and single-target modeling performance.</li>
             </ul>
+            <div class="project-card__actions">
+              <a class="btn btn--outline project-card__details-link" href="projects/project4lonely-update.html">View Project Details</a>
+              <a class="project-card__link" href="#" aria-label="Open GitHub or project link">Click here</a>
+            </div>
+            <!-- Replace # with actual GitHub/project URL later -->
           </article>
 
           <article class="project-card">
-            <div class="project-card__meta">Aug 2017 – Dec 2017</div>
-            <h3>University Library Booking Application</h3>
-            <p class="project-card__tech">Web App • Queue Management</p>
-            <ul>
-              <li>Built a reservation concept to book library books in advance.</li>
-              <li>Designed online inventory and queue-based booking logic.</li>
-              <li>Helped reduce unnecessary library visits.</li>
+            <a class="project-card__banner-link" href="projects/llm-time-series.html">
+              <div class="project-card__banner">
+                <img src="assets/banner/llm-time-series.png" alt="LLM Time Series Benchmark project banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <div class="project-card__banner-placeholder" aria-hidden="true">Project banner unavailable</div>
+              </div>
+            </a>
+            <h3>LLM Time Series Benchmark</h3>
+            <p class="project-card__category">AI Research / Time-Series Benchmarking</p>
+            <p class="project-card__summary">Built a benchmark framework comparing LSTM and LLM-inspired methods for synthetic and real-world time-series classification and forecasting.</p>
+            <p class="project-card__tech">Python • LSTM • Transformers • SHAP • Attention Visualization • NumPy • Pandas</p>
+            <ul class="project-card__highlights">
+              <li>Compared LSTM, Prompt Design, Direct Query, and Tokenization pipelines.</li>
+              <li>Evaluated both time-series classification and forecasting tasks.</li>
+              <li>Achieved 100% classification accuracy with LSTM and Tokenization approaches.</li>
+              <li>Achieved best forecasting performance with LSTM at MAE 0.0239.</li>
+              <li>Added SHAP explainability and attention visualization.</li>
+              <li>Tested synthetic and real-world evaluation settings with prompt engineering experiments.</li>
             </ul>
+            <div class="project-card__actions">
+              <a class="btn btn--outline project-card__details-link" href="projects/llm-time-series.html">View Project Details</a>
+              <a class="project-card__link" href="#" aria-label="Open GitHub or project link">Click here</a>
+            </div>
+            <!-- Replace # with actual GitHub/project URL later -->
           </article>
 
           <article class="project-card">
-            <div class="project-card__meta">Nov 2016 – Apr 2017</div>
-            <h3>University Notice Board Website</h3>
-            <p class="project-card__tech">Web Development • Communication Tools</p>
-            <ul>
-              <li>Built a website for publishing college announcements online.</li>
-              <li>Included emergency notices, competition updates, and result information.</li>
-              <li>Developed landing pages and login page structure.</li>
+            <a class="project-card__banner-link" href="projects/unhack.html">
+              <div class="project-card__banner">
+                <img src="assets/banner/unhack.png" alt="Unhack project banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <div class="project-card__banner-placeholder" aria-hidden="true">Project banner unavailable</div>
+              </div>
+            </a>
+            <h3>Unhack</h3>
+            <p class="project-card__category">Mobile App / AI Productivity</p>
+            <p class="project-card__summary">Built an AI-powered screen habit coach app using Flutter, Supabase, Android native integration, app usage tracking, reminders, and voice feedback.</p>
+            <p class="project-card__tech">Flutter • Supabase • Dart • Android MethodChannels • ElevenLabs</p>
+            <ul class="project-card__highlights">
+              <li>Built authentication and app structure using Flutter and Supabase.</li>
+              <li>Integrated Android native foreground app tracking through MethodChannels.</li>
+              <li>Added session tracking, daily usage aggregation, and app usage limits.</li>
+              <li>Created reminder logic with near-limit and exceeded-limit alerts.</li>
+              <li>Integrated ElevenLabs voice reminders.</li>
+              <li>Added dark mode and session analytics.</li>
             </ul>
+            <div class="project-card__actions">
+              <a class="btn btn--outline project-card__details-link" href="projects/unhack.html">View Project Details</a>
+              <a class="project-card__link" href="#" aria-label="Open GitHub or project link">Click here</a>
+            </div>
+            <!-- Replace # with actual GitHub/project URL later -->
+          </article>
+
+          <article class="project-card">
+            <a class="project-card__banner-link" href="projects/talk-mail.html">
+              <div class="project-card__banner">
+                <img src="assets/banner/talk-mail.png" alt="Mail_Hack / Talk Mail project banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <div class="project-card__banner-placeholder" aria-hidden="true">Project banner unavailable</div>
+              </div>
+            </a>
+            <h3>Mail_Hack / Talk Mail</h3>
+            <p class="project-card__category">Full Stack AI App / Voice Assistant</p>
+            <p class="project-card__summary">Created an AI-powered mail assistant web app with voice interaction, AI-generated replies, meeting extraction, and local mail/meeting workflows.</p>
+            <p class="project-card__tech">HTML • CSS • JavaScript • Node.js • OpenAI API • Speech Recognition • Text-to-Speech</p>
+            <ul class="project-card__highlights">
+              <li>Built inbox and sent mail UI with compose modal.</li>
+              <li>Added browser text-to-speech for reading emails aloud.</li>
+              <li>Added browser speech recognition for voice replies and meeting inputs.</li>
+              <li>Created AI-generated email reply flow through backend route /generate-reply.</li>
+              <li>Created AI meeting extraction through backend route /schedule-meeting.</li>
+              <li>Stored local meetings and sent messages using localStorage.</li>
+            </ul>
+            <div class="project-card__actions">
+              <a class="btn btn--outline project-card__details-link" href="projects/talk-mail.html">View Project Details</a>
+              <a class="project-card__link" href="#" aria-label="Open GitHub or project link">Click here</a>
+            </div>
+            <!-- Replace # with actual GitHub/project URL later -->
+          </article>
+
+          <article class="project-card">
+            <a class="project-card__banner-link" href="projects/animal-logging-map.html">
+              <div class="project-card__banner">
+                <img src="assets/banner/animal-logging-map.png" alt="Animal Logging Map for Trekkers and Forest Department project banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <div class="project-card__banner-placeholder" aria-hidden="true">Project banner unavailable</div>
+              </div>
+            </a>
+            <h3>Animal Logging Map for Trekkers and Forest Department</h3>
+            <p class="project-card__category">Android App / Mapping & Wildlife Reporting</p>
+            <p class="project-card__summary">Built an Android application concept for trekkers and forest department users to log animal sightings, support field reporting, and improve wildlife location awareness.</p>
+            <p class="project-card__tech">Android • Kotlin/Java • Maps • Mobile UI • Location Tracking</p>
+            <ul class="project-card__highlights">
+              <li>Designed an animal sighting logging workflow for trekkers and forest department use.</li>
+              <li>Included map-based reporting concept for wildlife location awareness.</li>
+              <li>Supported structured field data entry for animal sightings.</li>
+              <li>Designed the app for outdoor, field, and conservation-focused usage.</li>
+              <li>Created the foundation for future location-based alerts and forest department monitoring workflows.</li>
+            </ul>
+            <div class="project-card__actions">
+              <a class="btn btn--outline project-card__details-link" href="projects/animal-logging-map.html">View Project Details</a>
+              <a class="project-card__link" href="#" aria-label="Open GitHub or project link">Click here</a>
+            </div>
+            <!-- Replace # with actual GitHub/project URL later -->
           </article>
         </div>
       </section>

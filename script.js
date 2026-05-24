@@ -48,10 +48,10 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('theme', theme);
   }
 
-  if (themeToggle) {
-    const initialTheme = storedTheme === 'light' ? 'light' : 'dark';
-    applyTheme(initialTheme);
+  const initialTheme = storedTheme === 'light' ? 'light' : 'dark';
+  applyTheme(initialTheme);
 
+  if (themeToggle) {
     themeToggle.addEventListener('click', function () {
       const nextTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
       applyTheme(nextTheme);

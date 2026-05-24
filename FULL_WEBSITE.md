@@ -24,7 +24,8 @@ No external or fabricated resume data was added beyond the provided specificatio
 - About: Professional summary emphasizing Vignesh's academic and applied AI background.
 - Education: Academic timeline entries for Quinnipiac University and SCSVMV University.
 - Experience: Role cards for Goaira, Ijona, Amazon, and Exela SourceHov.
-- Projects: Cinematic project cards covering AI research, prediction systems, object detection, and university apps.
+- Projects: Cinematic project cards covering medical AI pipelines, healthcare ML, mental health modeling, AI research, mobile apps, voice assistants, and conservation mapping.
+- Project cards now include clickable banner images, consistent theme support, and dedicated detail pages in the `projects/` folder.
 - Skills: Categorized technical skill cards for languages, frameworks, web development, databases, tools, and concepts.
 - Certifications & Workshops: Included as part of achievement and community-related mentions.
 - Leadership & Achievements: Awards, sports leadership, and recognition are presented in organized cards.
@@ -40,6 +41,28 @@ assets/
     profile.png
   resume/
     (placeholder path for Vignesh_Balaji_Resume.pdf)
+  banner/
+    chest-xray-pipeline.png
+    tb-normal-classifier.png
+    thoracic-progression.png
+    heart-disease.png
+    project4lonely.png
+    project4lonely-update.png
+    llm-time-series.png
+    unhack.png
+    talk-mail.png
+    animal-logging-map.png
+projects/
+  chest-xray-pipeline.html
+  tb-normal-classifier.html
+  thoracic-progression.html
+  heart-disease.html
+  project4lonely.html
+  project4lonely-update.html
+  llm-time-series.html
+  unhack.html
+  talk-mail.html
+  animal-logging-map.html
 index.html
 style.css
 script.js
