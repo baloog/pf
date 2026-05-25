@@ -468,6 +468,129 @@ If you need help creating properly sized PNGs, I can add a short script to optim
 - `@keyframes logoRipple` controls the ring expansion, opacity fade, and overall ripple speed.
 - `@keyframes logoHalo` controls the continuous halo glow and third ripple layer.
 
+## Header Logo and Footer GIF Editing Guide
+
+This section explains how to place and customize the header logo and footer GIF.
+
+### Header Logo Placement
+
+1. **Where the header logo is stored**
+   - Place the header logo in `assets/images/`
+   - File name: `header-logo.png` (exact spelling required)
+
+2. **Where the header logo appears**
+   - The logo is positioned in the top-right corner of the navbar/header
+   - It appears immediately after the dark/light mode toggle button
+   - It stays inside the `.navbar__actions` container
+   - It aligns vertically with the toggle button using flexbox
+
+3. **How to change the header logo image**
+   - Place your new logo in `assets/images/`
+   - Rename or update the file to `header-logo.png`
+   - Refresh the browser to see the new logo
+   - The image will load automatically in the navbar
+
+4. **Recommended header logo sizes (desktop)**
+   - Width: auto (scales with height)
+   - Height: 42px on desktop
+   - Height: 36px on tablets (max-width: 768px)
+   - Height: 32px on mobile (max-width: 480px)
+   - Object-fit: contain (preserves aspect ratio, no cropping)
+
+5. **How to adjust header logo size**
+   - Open `style.css`
+   - Find the `.header-logo` CSS rule
+   - Change the `height` value: `height: 42px;` for desktop
+   - Update the media queries below for tablet and mobile sizes
+   - Max-height should be slightly smaller than navbar height (currently 18px padding)
+   - Save and refresh to see the new size
+
+6. **How the header logo is positioned**
+   - The logo uses flexbox alignment inside `.navbar__actions`
+   - Gap between toggle button and logo: 12px (controlled by `.navbar__actions { gap: 12px; }`)
+   - No overflow outside the navbar
+   - Responsive scaling on all screen sizes
+
+7. **CSS classes controlling header logo**
+   - `.header-logo` — main image class
+   - `.navbar__actions` — flex container for logo and toggle button
+
+### Footer GIF Placement
+
+1. **Where the footer GIF is stored**
+   - Place the footer GIF in `assets/images/`
+   - File name: `footer-gif.gif` (exact spelling required)
+   - GIF format is recommended for animations; PNG also works
+
+2. **Where the footer GIF appears**
+   - The GIF is positioned in the bottom-right corner of the footer
+   - It sits inside the `.footer` container
+   - It uses absolute positioning (footer has `position: relative`)
+   - It does not overlap the footer text badly
+   - It stays responsive on mobile
+
+3. **How to change the footer GIF**
+   - Place your new GIF in `assets/images/`
+   - Rename or update the file to `footer-gif.gif`
+   - Refresh the browser to see the new GIF
+   - The image will load automatically in the footer
+
+4. **Recommended footer GIF sizes (desktop)**
+   - Width: auto (scales with height)
+   - Height: 110px on desktop
+   - Height: 80px on tablets (max-width: 768px)
+   - Height: 64px on mobile (max-width: 480px)
+   - Object-fit: contain (preserves aspect ratio, no cropping)
+
+5. **How to adjust footer GIF size**
+   - Open `style.css`
+   - Find the `.footer-gif` CSS rule
+   - Change the `height` value: `height: 110px;` for desktop
+   - Update the media queries below for tablet and mobile sizes
+   - Adjust `bottom` and `right` values to control spacing from edges
+   - Save and refresh to see the new size
+
+6. **How the footer GIF is positioned**
+   - Footer GIF uses `position: absolute` inside the `.footer` container
+   - Desktop positioning: `bottom: 12px; right: 24px;`
+   - Tablet positioning: `bottom: 8px; right: 16px;` (at max-width: 768px)
+   - Mobile positioning: `bottom: 6px; right: 12px;` (at max-width: 480px)
+   - Opacity: 0.85 (slightly transparent) for a subtle look
+   - Opacity increases to 1 on hover for better visibility
+
+7. **CSS classes controlling footer GIF**
+   - `.footer` — container (needs `position: relative`)
+   - `.footer-gif` — main GIF image class
+   - Hover effect increases opacity for better interaction feedback
+
+8. **Preventing footer text overlap**
+   - The GIF is positioned in the bottom-right corner away from text
+   - Text is left-aligned and centered; GIF is bottom-right
+   - Padding inside footer ensures text doesn't collide: `padding: 28px 32px 40px;`
+   - Adjust `right` and `bottom` values if text overlaps
+   - On mobile, the GIF is smaller and positioned with less padding to save space
+
+9. **How flex alignment works in header**
+   - `.navbar__actions` uses `display: flex` and `align-items: center`
+   - Items inside (toggle button and logo) vertically align to center
+   - Gap between items: `gap: 12px`
+   - Both toggle and logo use `height` and `max-height` to stay within navbar bounds
+
+10. **Mobile sizing notes**
+    - Header logo scales down: 42px (desktop) → 36px (tablet) → 32px (mobile)
+    - Footer GIF scales down: 110px (desktop) → 80px (tablet) → 64px (mobile)
+    - Both use media queries at `max-width: 768px` and `max-width: 480px`
+    - Margins/spacing also shrink on mobile to preserve screen space
+    - All images use `object-fit: contain` to maintain aspect ratio
+
+11. **Common mistakes to avoid**
+    - Wrong file path: use `assets/images/` exactly (not `assets/` or other paths)
+    - Wrong file name: use exact spelling `header-logo.png` and `footer-gif.gif`
+    - Missing `position: relative` on `.footer` — GIF will not position correctly
+    - GIF extends outside footer bounds — check `bottom` and `right` values and footer padding
+    - Logo too large — adjust `height` in `.header-logo` CSS
+    - Opacity too high/low — adjust `.footer-gif { opacity: 0.85; }` value (0-1 range)
+
 2. How to change ripple color
 
 - Open `style.css`.

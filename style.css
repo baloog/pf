@@ -258,6 +258,35 @@ button {
   font-size: 0.9rem;
 }
 
+/* Header logo styling */
+.header-logo {
+  width: auto;
+  max-width: 110px;
+  height: 64px;
+  max-height: 64px;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .header-logo {
+    width: auto;
+    max-width: 90px;
+    height: 56px;
+    max-height: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-logo {
+    width: auto;
+    max-width: 70px;
+    height: 50px;
+    max-height: 50px;
+  }
+}
+
 .brand {
   color: var(--text);
   display: inline-block;
@@ -1117,9 +1146,51 @@ body.light-mode .about-card--accent {
 }
 
 .footer {
+  position: relative;
   padding: 28px 32px 40px;
   text-align: center;
   color: var(--text-muted);
+}
+
+/* Footer GIF styling */
+.footer-gif {
+  position: absolute;
+  bottom: 12px;
+  right: 24px;
+  width: 220px;
+  max-width: 260px;
+  height: auto;
+  max-height: 160px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity var(--transition);
+}
+
+.footer-gif:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .footer-gif {
+    width: 160px;
+    max-width: 180px;
+    height: auto;
+    max-height: 130px;
+    bottom: 8px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-gif {
+    width: 130px;
+    max-width: 150px;
+    height: auto;
+    max-height: 100px;
+    bottom: 6px;
+    right: 12px;
+    opacity: 0.8;
+  }
 }
 
 .reveal-on-scroll {
