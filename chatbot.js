@@ -35,7 +35,7 @@
       label: 'Tell me about your experience',
       keywords: ['experience', 'work', 'job', 'career', 'roles', 'company'],
       answer:
-        "Full Stack Developer at Goaira Technologies (~25% system performance improvement, ~30% fewer defects), Machine Learning Data Associate at Amazon (voice-interaction anomaly detection), and two roles as a Full-Stack WordPress Developer at Ijona Technologies (migrated 15+ sites, built client chatbots) — plus part-time student work at Compass Group. <a href=\"#experience\">See the full experience timeline &rarr;</a>",
+        "Full Stack Developer at Goaira Technologies (~25% system performance improvement, ~30% fewer defects), Machine Learning Data Associate at Amazon (voice-interaction anomaly detection), and two roles as a Full-Stack WordPress Developer at Ijona Technologies (migrated 15+ sites, built client chatbots). <a href=\"#experience\">See the full experience timeline &rarr;</a>",
       related: ['projects', 'skills'],
       verified: true
     },
